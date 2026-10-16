@@ -1,0 +1,13 @@
+const router = require('express').Router();
+const c = require('../controllers/workerController');
+const { protect, restrictTo } = require('../middleware/auth');
+const sj = require('../controllers/savedJobController');
+router.get('/me/saved-jobs', protect, restrictTo('worker'), sj.list);
+router.post('/me/saved-jobs/:jobId', protect, restrictTo('worker'), sj.toggle);
+router.get('/me', protect, restrictTo('worker'), c.getMe);
+router.patch('/me', protect, restrictTo('worker'), c.updateMe);
+router.get('/me/history', protect, restrictTo('worker'), c.getMyHistory);
+router.get('/me/earnings', protect, restrictTo('worker'), c.getMyEarnings);
+router.get('/:id', protect, c.getPublic);
+module.exports = router;
+router.post('/me/verification', protect, restrictTo('worker'), c.submitVerification);

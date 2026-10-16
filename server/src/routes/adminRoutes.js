@@ -1,0 +1,18 @@
+const router = require('express').Router();
+const c = require('../controllers/adminController');
+const { protect, restrictTo } = require('../middleware/auth');
+router.use(protect, restrictTo('admin'));
+router.get('/users', c.listUsers);
+router.patch('/users/:id/status', c.updateUserStatus);
+router.get('/reports', c.listReports);
+router.patch('/reports/:id', c.updateReport);
+router.get('/analytics', c.analytics);
+router.get('/audit-logs', c.listAuditLogs);
+router.get('/verifications', c.listVerifications);
+router.patch('/verifications/:id', c.reviewVerification);
+module.exports = router;
+router.get('/jobs', c.listJobs);
+router.post('/jobs/:id/cancel', c.cancelJob);
+router.get('/payments', c.listPayments);
+router.get('/disputes', c.listDisputes);
+router.patch('/disputes/:id', c.updateDispute);

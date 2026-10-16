@@ -1,0 +1,19 @@
+{
+  "name": "ShramSetu Daily Work",
+  "short_name": "ShramSetu",
+  "description": "Find work directly. Hire directly. Verified daily-wage workers and employers across India.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B1220",
+  "theme_color": "#F97316",
+  "lang": "hi-IN",
+  "scope": "/",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/logo-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

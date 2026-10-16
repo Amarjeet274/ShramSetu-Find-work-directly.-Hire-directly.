@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-[#F1F5F9] text-slate-900 antialiased;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  .input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-brand-orange/50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@layer components {
+
+  /* ---- Buttons ---- */
+  .btn-primary {
+    @apply bg-brand-orange hover:bg-brand-orangeDark text-white font-semibold rounded-xl px-5 min-h-touch inline-flex items-center justify-center gap-2 transition-colors text-[15px];
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-slate-300 hover:border-slate-400 text-slate-900 font-semibold rounded-xl px-5 min-h-touch inline-flex items-center justify-center gap-2 transition-colors text-[15px];
+  }
+
+  .btn-dark {
+    @apply bg-brand-navy hover:bg-slate-800 text-white font-semibold rounded-xl px-5 min-h-touch inline-flex items-center justify-center gap-2 transition-colors text-[15px];
+  }
+
+  .btn-ghost {
+    @apply text-slate-600 hover:bg-slate-100 font-medium rounded-lg px-3 min-h-[44px] inline-flex items-center justify-center gap-2 transition-colors text-sm;
+  }
+
+  /* ---- Inputs ---- */
+  .input {
+    @apply w-full min-h-touch px-4 text-[15px] border border-slate-300 rounded-xl bg-white placeholder:text-slate-400 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all;
+  }
+
+  .label {
+    @apply block text-[13px] font-semibold text-slate-700 mb-1.5;
+  }
+
+  /* ---- Cards ---- */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-card;
+  }
+
+  /* ---- Chips ---- */
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap;
+  }
+
+  .chip-dark {
+    @apply chip bg-transparent border border-white/25 text-white hover:bg-white/10 cursor-pointer;
+  }
+
+  .chip-light {
+    @apply chip bg-white border border-slate-200 text-slate-700 hover:border-slate-300 cursor-pointer;
+  }
+
+  /* ---- Sidebar nav ---- */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-[14px] font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors;
+  }
+
+  .nav-item-active {
+    @apply nav-item bg-brand-orange text-white hover:bg-brand-orange;
+  }
+
+  /* Match ring */
+  .match-ring {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-xs font-bold border-2;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, .35);
+  border-radius: 999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
